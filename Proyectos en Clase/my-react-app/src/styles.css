@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #4b6cb7, #182848); /* Fondo degradado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #f5f5f5;
+    overflow: hidden;
+  }
+  
+  .app-container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    transition: transform 0.3s ease;
+  }
+  
+  .app-container:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #ffd700; /* Color dorado para el título */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  input[type="text"] {
+    padding: 12px 15px;
+    width: 80%;
+    border: 2px solid #ffd700;
+    border-radius: 25px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.5); /* Fondo más claro al hacer foco */
+    border-color: #fff; /* Cambia el color del borde */
+  }
+  
+  /* Greeting Styles */
+  .greeting {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    color: #ffd700;
+    animation: fadeIn 1s ease; /* Animación de entrada */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Button Styles */
+  .alert-button {
+    padding: 10px 25px;
+    font-size: 1rem;
+    color: #fff;
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .alert-button:hover {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b); /* Cambia el degradado */
+    transform: translateY(-3px); /* Efecto de elevación */
+  }
+  
+  .alert-button:active {
+    transform: translateY(1px); /* Efecto de presión */
+  }
+  
+  /* Animations for dynamic effects */
+  @keyframes buttonClick {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

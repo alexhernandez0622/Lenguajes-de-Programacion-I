@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #f0f4f8;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: #0070f3;
+  }
+  
+  .description {
+    font-size: 1.25rem;
+    color: #333;
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    color: #0070f3;
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  

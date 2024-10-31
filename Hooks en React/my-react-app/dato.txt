@@ -1,0 +1,75 @@
+// Importa el hook useState de React, que permite manejar el estado dentro del componente
+import { useState } from 'react';
+// Importa un hook personalizado para obtener datos desde una API
+import useFetchData from './hooks/useFetchData';
+// Importa un componente de botón personalizado que dispara una alerta
+import AlertButton from './components/AlertButton';
+// Importa SweetAlert2 para mostrar alertas con un estilo personalizado
+import Swal from 'sweetalert2';
+// Importa los estilos CSS para la aplicación
+import './index.css';
+
+const App = () => {
+  // Usa el hook personalizado useFetchData para obtener los datos desde la API;
+  // devuelve 'data' (los posts), 'loading' (estado de carga) y 'error' (error si existe)
+  const { data, loading, error } = useFetchData('https://jsonplaceholder.typicode.com/posts');
+  // Define un estado booleano 'showData' para controlar la visibilidad de los datos
+  const [showData, setShowData] = useState(false);
+
+  // Define una función para alternar la visibilidad de los datos de posts
+  const toggleData = () => setShowData(!showData);
+
+  return (
+    // Contenedor principal de la aplicación
+    <div className="App">
+      {/* Título principal de la aplicación */}
+      <h1>Aplicación React con Hooks y SweetAlert2</h1>
+      
+      {/* Renderiza el componente AlertButton, que muestra una alerta */}
+      <AlertButton />
+
+      {/* Botón para alternar la visualización de datos */}
+      <button onClick={toggleData} className="data-button">
+        {showData ? 'Ocultar Posts' : 'Mostrar Posts'} {/* Cambia el texto según el estado de showData */}
+      </button>
+
+      {/* Muestra un mensaje mientras los datos están cargando */}
+      {loading && <p>Cargando posts interesantes...</p>}
+
+      {/* Muestra un mensaje de error si ocurre un error al obtener los datos */}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+
+      {/* Condicional para mostrar la lista de datos solo si showData es true y data existe */}
+      {showData && data && (
+        <div className="posts-container">
+          {/* Mapea los primeros 5 elementos de 'data' y renderiza cada uno en una tarjeta */}
+          {data.slice(0, 5).map((item) => (
+            <div key={item.id} className="post-card">
+              {/* Título del post, mostrando su número de ID y título */}
+              <h3 className="post-title">📝 Post #{item.id}: {item.title}</h3>
+              
+              {/* Descripción del post, mostrando hasta 80 caracteres con "..." si es muy larga */}
+              <p className="post-description">
+                {item.body.length > 80 
+                  ? item.body.slice(0, 80) + '...'  // Muestra hasta 80 caracteres y agrega "..." si se excede
+                  /* Si tiene 80 caracteres o menos, muestra el cuerpo completo*/
+                  : item.body} 
+              </p>
+              
+              {/* Botón 'Leer más' que muestra un mensaje con el contenido completo del post en una alerta */}
+              <button 
+                onClick={() => Swal.fire(`Detalles del Post #${item.id}`, item.body, 'info')}
+                className="read-more"
+              >
+                Leer más
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// Exporta el componente App como el componente principal de la aplicación
+export default App;

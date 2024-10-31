@@ -1,0 +1,23 @@
+<!--Crear un programa que me permita ingresar datos y que me los muestre en una ventana emergente-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/script"></script>
+</head>
+<body>
+    <form id="miFormulario">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email">
+        <br>
+        <button type="button" onclick="mostrarDatos()">Visualizar Datos</button>
+    </form>
+    <div id="resultado"></div>
+</body>
+</html>

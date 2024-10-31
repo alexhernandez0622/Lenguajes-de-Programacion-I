@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    <input type="text" id="nombre" placeholder="Ingrese su nombre">
+    <button onclick="validarFormulario()">Enviar</button>
+    <p id="mensaje"></p>
+    <script>
+        function validarFormulario() {
+            let nombre = document.getElementById("nombre").value;
+            if (nombre === "") {
+                document.getElementById("mensaje").textContent = "Por favor, ingrese su nombre.";
+            } else {
+                document.getElementById("mensaje").textContent = "¡Hola, " + nombre + "!";
+            }
+        }
+    </script>
+</body>
+</html>

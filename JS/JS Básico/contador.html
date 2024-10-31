@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <button onclick="contarClics()">Clics: <span id="contador">0</span></button>
+    <script>
+        var contador = 0;
+
+        function contarClics() {
+            contador++;
+            document.getElementById("contador").textContent = contador;
+        }
+    </script>
+</body>
+</html>

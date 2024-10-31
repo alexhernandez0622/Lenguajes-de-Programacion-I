@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <input type="text" id="nuevaTarea" placeholder="Nueva tarea">
+    <button onclick="agregarTarea()">Agregar</button>
+    <ul id="listaTareas"></ul>
+    <script>
+        // Definición de la función agregarTarea
+        function agregarTarea() {
+            // Obtener el valor del elemento con el id "nuevaTarea"
+            let tarea = document.getElementById("nuevaTarea").value;
+        
+            // Comprobar si el valor de tarea no está vacío
+            if (tarea !== "") {
+                // Obtener la lista de tareas con el id "listaTareas"
+                let lista = document.getElementById("listaTareas");
+        
+                // Crear un nuevo elemento <li>
+                let elemento = document.createElement("li");
+        
+                // Establecer el texto del elemento <li> con el valor de la tarea
+                elemento.textContent = tarea;
+        
+                // Agregar el elemento <li> a la lista de tareas
+                lista.appendChild(elemento);
+        
+                // Borrar el contenido del elemento con el id "nuevaTarea" para limpiar la entrada
+                document.getElementById("nuevaTarea").value = "";
+        
+                // Agregar un evento onclick al elemento <li> para eliminarlo cuando se haga clic
+                elemento.onclick = function() {
+                    lista.removeChild(elemento);
+                };
+            }
+        }
+        
+    </script>
+</body>
+</html>

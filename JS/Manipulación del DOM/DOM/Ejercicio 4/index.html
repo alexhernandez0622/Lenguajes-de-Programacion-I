@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cambiar Título H1</title>
+</head>
+<body>
+  <h1 id="titulo">Título Original</h1>
+  <button onclick="cambiarTitulo()">Cambiar Título</button>
+
+  <script>
+    function cambiarTitulo() {
+      var nuevoTitulo = prompt("Introduce el nuevo título:");
+      
+      if (nuevoTitulo !== null) {
+        return cambiarTituloH1(nuevoTitulo);
+      }
+    }
+
+    function cambiarTituloH1(nuevoTitulo) {
+      document.getElementById("titulo").textContent = nuevoTitulo;
+    }
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <button onclick="cambiarColorFondo()">Cambiar Color</button>
+    <script>
+        var colores = ["red", "green", "blue", "yellow", "purple"];
+        var indice = 0;
+
+       // Definición de la función cambiarColorFondo
+function cambiarColorFondo() {
+    // Cambiar el color de fondo del elemento <body>
+    document.body.style.backgroundColor = colores[indice];
+    
+    // Incrementar el índice y asegurarse de que vuelva a 0 cuando alcance el final de la lista de colores
+    indice = (indice + 1) % colores.length;
+}
+
+    </script>
+</body>
+</html>

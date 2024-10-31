@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <p>La hora actual es: <span id="reloj"></span></p>
+    <script>
+        function mostrarHora() {
+            let fecha = new Date();
+            let hora = fecha.getHours();
+            let minutos = fecha.getMinutes();
+            let segundos = fecha.getSeconds();
+            document.getElementById("reloj").textContent = hora + ":" + minutos + ":" + segundos;
+        }
+
+        setInterval(mostrarHora, 1000);
+        mostrarHora(); // Mostrar la hora inicialmente
+    </script>
+</body>
+</html>

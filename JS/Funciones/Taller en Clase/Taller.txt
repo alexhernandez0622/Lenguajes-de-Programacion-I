@@ -1,0 +1,4 @@
+Verificar si un año es bisiesto.
+Generar un array con los primeros n números primos.
+Calcular el máximo común divisor (MCD) de dos números.
+Convertir una frase a formato de título (cada palabra comienza con mayúscula).
